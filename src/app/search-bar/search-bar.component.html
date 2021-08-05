@@ -1,0 +1,25 @@
+<fieldset>
+    <legend>
+        <p>Search-bar</p>
+    </legend>
+    <form>
+        <fieldset>
+            <input type="searchText" id="searchBoxName" name="searchText" [(ngModel)]="searchText" placeholder="search for product"/>
+            <div>
+                <input type="checkbox" name="checkForStockedProducts" [(ngModel)]="checkForStockedProducts"/>
+                <label for="checkForStockedProducts"> Only show products in stock</label><br>
+            </div>
+        </fieldset>
+        <fieldset>
+            <p> Name &nbsp; Price</p>
+            <ul>
+                <li *ngFor="let product of products | filter : searchText" >
+                   {{product.Name}}  {{product.Price}}
+                </li>
+            </ul> 
+        </fieldset>
+    </form>
+</fieldset>
+
+
+
